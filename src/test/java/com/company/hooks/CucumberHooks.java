@@ -1,6 +1,7 @@
 package com.company.hooks;
 
 import com.company.driver.CreateDriver;
+import com.company.locators.Locators;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.By;
@@ -10,23 +11,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static com.company.locators.Locators.CANCEL_LOGIN;
+import static com.company.locators.Locators.URL;
+
 public class CucumberHooks {
     private WebDriver driver;
 
     @Before
     public void before() {
-        driver = CreateDriver.createDriver(System.getProperty("browser","chrome"));
-        driver.get("http://flipkart.com");
+        driver = CreateDriver.createDriver(System.getProperty("browser", "chrome"));
+        driver.get(URL);
         driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15L));
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement
-                (By.xpath("//span[@role='button' and text()]"))));
-        driver.findElement
-                (By.xpath("//span[@role='button' and text()]")).click();
-    }
-
-    @After
-    public void tearDown() {
-        driver.quit();
+        new WebDriverWait(driver, Duration.ofSeconds(20L))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(CANCEL_LOGIN))).click();
     }
 }
+
+//    @After
+//    public void tearDown() {
+//        driver.quit();
+//    }
+//}

@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbe2f33-eb89-4c68-8363-f266968e4224" name="Changes" comment="Second Commit">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/FlightsInfo.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/runners/JUnitRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/runners/JUnitRunnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/hooks/CucumberHooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/hooks/CucumberHooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/company/runners/TestNGRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/runners/TestNGRunnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/stepdefs/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/stepdefs/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/company/stepdefs/TravelPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/stepdefs/TravelPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/Travel.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Travel.feature" afterDir="false" />
     </list>
@@ -19,6 +21,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -61,7 +64,7 @@
       <recent name="com.company.stepdefs" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JUnitRunnerTest">
+  <component name="RunManager" selected="TestNG.TestNGRunnerTest">
     <configuration name="Feature: Travel" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Travel.feature" />
@@ -81,15 +84,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: City names in From and To dropdowns should be same" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Flights Info" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Travel.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/FlightsInfo.feature" />
       <option name="GLUE" value="com.company.stepdefs com.company.hooks" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="QCMiniProject_Flipkart_Travel" />
-      <option name="NAME_FILTER" value="^City names in From and To dropdowns should be same$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^City names in From and To dropdowns should be same$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: City names in From and To dropdowns should be same" />
+      <option name="NAME_FILTER" value="^Flights Info$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Flights Info$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Flights Info" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -165,7 +168,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber Java.Scenario: City names in From and To dropdowns should be same" />
+      <item itemvalue="Cucumber Java.Scenario: Flights Info" />
       <item itemvalue="Cucumber Java.Scenario: Search Flights" />
       <item itemvalue="Cucumber Java.Feature: Travel" />
       <item itemvalue="JUnit.JUnitRunnerTest" />
@@ -173,11 +176,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JUnitRunnerTest" />
         <item itemvalue="TestNG.TestNGRunnerTest" />
+        <item itemvalue="Cucumber Java.Scenario: Flights Info" />
+        <item itemvalue="JUnit.JUnitRunnerTest" />
         <item itemvalue="Cucumber Java.Scenario: Search Flights" />
         <item itemvalue="Cucumber Java.Feature: Travel" />
-        <item itemvalue="Cucumber Java.Scenario: City names in From and To dropdowns should be same" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695620778935</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Second Commit">
+      <created>1695666577733</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695666577733</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

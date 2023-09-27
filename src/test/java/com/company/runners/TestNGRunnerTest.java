@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 features = "src/test/resources/features",
 glue = "com.company",
 plugin = {"pretty", "html:target/cucumber.html"},
-tags = "@SearchFlights"
+tags = "@FlightsInfo"
 )
 public class TestNGRunnerTest extends AbstractTestNGCucumberTests {
 }
