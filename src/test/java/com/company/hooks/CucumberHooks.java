@@ -1,8 +1,6 @@
 package com.company.hooks;
 
 import com.company.driver.CreateDriver;
-import com.company.locators.Locators;
-import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,10 +23,9 @@ public class CucumberHooks {
         new WebDriverWait(driver, Duration.ofSeconds(20L))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(CANCEL_LOGIN))).click();
     }
-}
 
 //    @After
 //    public void tearDown() {
 //        driver.quit();
 //    }
-//}
+}
