@@ -24,5 +24,14 @@ Feature: Flipkart Travel
     *      I select "<cabin>" class
     *      I click Search button
     Examples:
-      | fromCity | toCity | departOn         | numberOfAdults | cabin           |
-      | Mumbai   | Dubai  | 31 November 2023 | 3              | premium economy |
+      | fromCity  | toCity | departOn         | numberOfAdults | cabin   |
+    #  | Mumbai   | Dubai  | 1 January 2024 | 3              | premium economy |
+    #  | New Delhi    | Miami  | 30 September 2023  | 8              | economy         |
+    #  |   Delhi | Mumbai |  30 September 2023  | 8              | economy         |
+    #  | New Delhi | Mumbai |  30 september 2023  | 8              | economy         |
+
+    #  | new delhi | mumbai | 31 June 2024 | 3              | economy |
+    #  |     new delhi | mumbai |  31 June 2023  | 3              | economy         |
+    #  | new delhi | mumbai | 1 september 2023 | 3              | economy |  //Need to handle current month past date validation
+
+

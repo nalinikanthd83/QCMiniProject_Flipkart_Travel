@@ -7,7 +7,9 @@
     <list default="true" id="9dbe2f33-eb89-4c68-8363-f266968e4224" name="Changes" comment="Third Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/company/hooks/CucumberHooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/hooks/CucumberHooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/FlightsInfo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/FlightsInfo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/runners/TestNGRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/runners/TestNGRunnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/stepdefs/TravelPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/stepdefs/TravelPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Travel.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Travel.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,23 +36,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/nalin/IdeaProjects/InterviewQuestions",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nalin/IdeaProjects/InterviewQuestions&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nalin\Documents\QCMiniProject_Flipkart_Travel\src\test\java" />
@@ -215,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695784736231</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Third Commit">
+      <created>1695934087076</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695934087076</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,5 +243,16 @@
     <MESSAGE value="Second Commit" />
     <MESSAGE value="Third Commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Third Commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/company/stepdefs/TravelPage.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

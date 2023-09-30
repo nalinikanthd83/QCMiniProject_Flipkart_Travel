@@ -155,99 +155,6 @@ public class TravelPage {
         }
     }
 
-    private void clickPresentYearDate(List<String> months, String[] dateSplit) {
-
-        startDate.click();
-        String[] currentMonthYear = driver.findElement(By.xpath("(//table/descendant::div[text()][1])[1]"))
-                .getText().trim().split("\\s+");
-        String inputtedMonth = dateSplit[1].trim();
-
-        if (months.indexOf(currentMonthYear[0].trim().toUpperCase()) > months.indexOf(inputtedMonth.toUpperCase())) {
-            throw new IllegalArgumentException("Past Date Entered");
-        }
-
-        while (driver.findElement(By.xpath("(//table/descendant::div[text()][1])[1]"))
-                .getText().trim().toLowerCase().contains(dateSplit[2].trim().toLowerCase())) {
-            if (driver.findElement(By.xpath("(//table/descendant::div[text()][1])[1]"))
-                    .getText().trim().toLowerCase().contains((dateSplit[1].trim().toLowerCase()) + " " + (dateSplit[2].trim()))) {
-                if (driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
-                        dateSplit[0].trim() + "'" + "])")).isEnabled()) {
-                    driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
-                            dateSplit[0].trim() + "'" + "])")).click();
-                    System.out.println(startDate.getAttribute("value"));
-                    break;
-                }
-            }
-            if (driver.findElement(By.xpath("(//table/descendant::div[text()][1])[2]"))
-                    .getText().trim().toLowerCase().contains((dateSplit[1].trim().toLowerCase()) + " " + (dateSplit[2].trim()))) {
-                if (driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
-                        dateSplit[0].trim() + "'" + "])")).isEnabled()) {
-                    driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
-                            dateSplit[0].trim() + "'" + "])")).click();
-                    System.out.println(startDate.getAttribute("value"));
-                    break;
-                }
-            }
-            driver.findElement(By.xpath("(//table/descendant::button[1])[2]")).click();
-        }
-    }
-
-    private void clickDate(String[] dateSplit) {
-
-        while (true) {
-            startDate.click();
-            driver.findElement(By.xpath("(//table/descendant::button[1])[2]")).click();
-            if (driver.findElement(By.xpath("(//table/descendant::div[text()][1])[1]"))
-                    .getText().trim().toLowerCase().contains(dateSplit[1].trim().toLowerCase() + " " + dateSplit[2].trim())) {
-                if (!driver.findElement(By.xpath("(//table/descendant::div[text()][1])[1]")).isEnabled()) {
-                    throw new RuntimeException();
-                }
-                try {
-                    driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
-                            dateSplit[0].trim() + "'" + "])[1]")).click();
-                    System.out.println(startDate.getAttribute("value"));
-                } catch (RuntimeException e) {
-                    System.out.println(Arrays.toString(dateSplit));
-                    throw new RuntimeException("Check the date entered");
-                }
-                break;
-            } else if (driver.findElement(By.xpath("(//table/descendant::div[text()][1])[2]"))
-                    .getText().trim().toLowerCase().contains(dateSplit[1].trim().toLowerCase() + " " + dateSplit[2].trim())) {
-                try {
-                    if (!driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
-                            dateSplit[0].trim() + "'" + "])[2]")).isEnabled()) {
-                        throw new RuntimeException();
-                    }
-                    driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
-                            dateSplit[0].trim() + "'" + "])[2]")).click();
-                    System.out.println(startDate.getAttribute("value"));
-                } catch (RuntimeException e) {
-                    System.out.println(Arrays.toString(dateSplit));
-                    throw new RuntimeException("Check the date entered");
-                }
-                break;
-            } else if (!driver.findElement(By.xpath("(//table/descendant::button[1])[2]"))
-                    .isEnabled()) {
-                throw new RuntimeException("Date cannot be selected");
-            }
-        }
-    }
-
-    private void monthAndDayValidation(String[] dateSplit) {
-
-        List<String> months = List.of(
-                "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
-                "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
-        );
-
-        if (!months.contains(dateSplit[1].trim().toUpperCase())) {
-            throw new RuntimeException("Invalid month name");
-        }
-
-        if (Integer.parseInt(dateSplit[0]) <= 0 || Integer.parseInt(dateSplit[0]) > 31) {
-            throw new RuntimeException("Invalid date");
-        }
-    }
 
     @When("I select {string} adults")
     public void i_select_adults(String numOfAdults) {
@@ -304,7 +211,7 @@ public class TravelPage {
     }
 
     @When("I enter details and perform search")
-    public void i_enter_details_and_perform_search(DataTable dataTable){
+    public void i_enter_details_and_perform_search(DataTable dataTable) {
         List<String> list = dataTable.row(0);
 
         i_select_starting_city(list.get(0));
@@ -313,5 +220,109 @@ public class TravelPage {
         i_select_adults(list.get(3));
         i_select_class(list.get(4));
         i_click_search_button();
+    }
+
+
+    private void clickPresentYearDate(List<String> months, String[] dateSplit) {
+
+        startDate.click();
+        String[] currentMonthYear = driver.findElement(By.xpath("(//table/descendant::div[text()][1])[1]"))
+                .getText().trim().split("\\s+");
+        String inputtedMonth = dateSplit[1].trim();
+
+        if (months.indexOf(currentMonthYear[0].trim().toUpperCase()) > months.indexOf(inputtedMonth.toUpperCase())) {
+            throw new IllegalArgumentException("Past Date Entered");
+        }
+
+        while (driver.findElement(By.xpath("(//table/descendant::div[text()][1])[2]"))
+                .getText().trim().toLowerCase().contains(dateSplit[2].trim().toLowerCase())) {
+            if (driver.findElement(By.xpath("(//table/descendant::div[text()][1])[1]"))
+                    .getText().trim().toLowerCase().contains((dateSplit[1].trim().toLowerCase()) + " " + (dateSplit[2].trim()))) {
+                try {
+                    if (driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
+                            dateSplit[0].trim() + "'" + "])")).isEnabled()) {
+                        driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
+                                dateSplit[0].trim() + "'" + "])")).click();
+                        System.out.println(startDate.getAttribute("value"));
+                        break;
+                    }
+                } catch (Exception e) {
+                    throw new RuntimeException("Date not valid " + Arrays.toString(dateSplit));
+                }
+            }
+            if (driver.findElement(By.xpath("(//table/descendant::div[text()][1])[2]"))
+                    .getText().trim().toLowerCase().contains((dateSplit[1].trim().toLowerCase()) + " " + (dateSplit[2].trim()))) {
+                try {
+                    if (driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
+                            dateSplit[0].trim() + "'" + "])")).isEnabled()) {
+                        driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
+                                dateSplit[0].trim() + "'" + "])")).click();
+                        System.out.println(startDate.getAttribute("value"));
+                        break;
+                    }
+                } catch (Exception e) {
+                    throw new RuntimeException("Date not valid " + Arrays.toString(dateSplit));
+                }
+            }
+
+            driver.findElement(By.xpath("(//table/descendant::button[1])[2]")).click();
+        }
+    }
+
+    private void monthAndDayValidation(String[] dateSplit) {
+
+        List<String> months = List.of(
+                "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+                "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
+        );
+
+        if (!months.contains(dateSplit[1].trim().toUpperCase())) {
+            throw new RuntimeException("Invalid month name");
+        }
+
+        if (Integer.parseInt(dateSplit[0]) <= 0 || Integer.parseInt(dateSplit[0]) > 31) {
+            throw new RuntimeException("Invalid date");
+        }
+    }
+
+    private void clickDate(String[] dateSplit) {
+
+        while (true) {
+            startDate.click();
+            driver.findElement(By.xpath("(//table/descendant::button[1])[2]")).click();
+            if (driver.findElement(By.xpath("(//table/descendant::div[text()][1])[1]"))
+                    .getText().trim().toLowerCase().contains(dateSplit[1].trim().toLowerCase() + " " + dateSplit[2].trim())) {
+                if (!driver.findElement(By.xpath("(//table/descendant::div[text()][1])[1]")).isEnabled()) {
+                    throw new RuntimeException();
+                }
+                try {
+                    driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
+                            dateSplit[0].trim() + "'" + "])[1]")).click();
+                    System.out.println(startDate.getAttribute("value"));
+                } catch (RuntimeException e) {
+                    System.out.println(Arrays.toString(dateSplit));
+                    throw new RuntimeException("Check the date entered");
+                }
+                break;
+            } else if (driver.findElement(By.xpath("(//table/descendant::div[text()][1])[2]"))
+                    .getText().trim().toLowerCase().contains(dateSplit[1].trim().toLowerCase() + " " + dateSplit[2].trim())) {
+                try {
+                    if (!driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
+                            dateSplit[0].trim() + "'" + "])[2]")).isEnabled()) {
+                        throw new RuntimeException();
+                    }
+                    driver.findElement(By.xpath("(//table/descendant::button[text()=" + "'" +
+                            dateSplit[0].trim() + "'" + "])[2]")).click();
+                    System.out.println(startDate.getAttribute("value"));
+                } catch (RuntimeException e) {
+                    System.out.println(Arrays.toString(dateSplit));
+                    throw new RuntimeException("Check the date entered");
+                }
+                break;
+            } else if (!driver.findElement(By.xpath("(//table/descendant::button[1])[2]"))
+                    .isEnabled()) {
+                throw new RuntimeException("Date cannot be selected");
+            }
+        }
     }
 }
